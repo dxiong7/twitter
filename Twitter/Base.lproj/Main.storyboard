@@ -54,14 +54,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="120" id="GMj-q2-hDs" customClass="TweetCellTableView" customModule="Twitter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="128" id="GMj-q2-hDs" customClass="TweetCellTableView" customModule="Twitter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GMj-q2-hDs" id="r1r-LA-Vf8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i8I-Wu-oOb">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i8I-Wu-oOb">
                                             <rect key="frame" x="5" y="5" width="65" height="65"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="65" id="0jY-Am-srg"/>
@@ -69,13 +69,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3f-JO-QtX">
-                                            <rect key="frame" x="78" y="5" width="81.5" height="21"/>
+                                            <rect key="frame" x="78" y="5" width="289" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imu-0d-ys2">
-                                            <rect key="frame" x="78" y="30" width="42" height="20.5"/>
+                                            <rect key="frame" x="78" y="30" width="273" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -83,8 +83,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="F3f-JO-QtX" firstAttribute="top" secondItem="r1r-LA-Vf8" secondAttribute="top" constant="5" id="0Rj-m8-KOE"/>
+                                        <constraint firstAttribute="trailing" secondItem="F3f-JO-QtX" secondAttribute="trailing" constant="8" id="1s5-KI-M6T"/>
                                         <constraint firstItem="F3f-JO-QtX" firstAttribute="leading" secondItem="i8I-Wu-oOb" secondAttribute="trailing" constant="8" id="8hI-8P-hbQ"/>
                                         <constraint firstItem="imu-0d-ys2" firstAttribute="leading" secondItem="i8I-Wu-oOb" secondAttribute="trailing" constant="8" id="9Dg-le-zeW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="imu-0d-ys2" secondAttribute="trailing" constant="8" id="H8v-Wh-4FT"/>
                                         <constraint firstItem="i8I-Wu-oOb" firstAttribute="leading" secondItem="r1r-LA-Vf8" secondAttribute="leading" constant="5" id="pRH-PL-sQi"/>
                                         <constraint firstItem="i8I-Wu-oOb" firstAttribute="top" secondItem="r1r-LA-Vf8" secondAttribute="top" constant="5" id="r1c-7N-JBA"/>
                                         <constraint firstItem="imu-0d-ys2" firstAttribute="top" secondItem="F3f-JO-QtX" secondAttribute="bottom" constant="4" id="t6E-o1-RIn"/>
