@@ -13,9 +13,18 @@ class HomeTableViewController: UITableViewController {
     var tweetArray = [NSDictionary]()
     var numberofTweet: Int!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 125
+        loadTweets()
+        
+    }
+    
     func loadTweets() {
+        numberofTweet = 20
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let myParams = ["count": 10]
+        let myParams = ["count": numberofTweet]
         
 
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets: [NSDictionary]) in
@@ -34,16 +43,38 @@ class HomeTableViewController: UITableViewController {
         
     }
     
+    func loadMoreTweets() {
+        numberofTweet = numberofTweet + 20
+        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        let myParams = ["count": numberofTweet]
+        
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams, success: { (tweets: [NSDictionary]) in
+            
+            self.tweetArray.removeAll()
+            for tweet in tweets {
+                self.tweetArray.append(tweet)
+            }
+            
+            self.tableView.reloadData()
+            
+        }, failure: { (Error) in
+            print("Could not retrieve tweets")
+        })
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row + 1 == tweetArray.count {
+            loadMoreTweets()
+        }
+        
+    }
+    
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.rowHeight = 125
-        loadTweets()
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
