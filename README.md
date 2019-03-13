@@ -22,13 +22,7 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='hhttps://i.imgur.com/O98GISG.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-=======
-# Project 3 - Twitter
-
-a basic twitter app to read tweets.
-
-Time spent: 5 hours spent in total
+<img src='https://i.imgur.com/O98GISG.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## User Stories
 
