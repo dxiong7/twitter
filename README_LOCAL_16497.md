@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Twitter - Part II
 
 This is a basic twitter app to view, compose, favorite, and retweet tweets.
@@ -25,13 +24,10 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 # Project 3 - *Name of App Here*
-=======
-# Project 3 - Twitter
->>>>>>> dffab9301e810d6e0fc1cb2374ba4cf3647ee393
 
 a basic twitter app to read tweets.
 
-Time spent: 5 hours spent in total
+Time spent: **X** hours spent in total
 
 ## User Stories
 
@@ -52,9 +48,5 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<<<<<<< HEAD
 <img src='https://media.giphy.com/media/2yujcJ9bEPFvOBBn5f/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-=======
-<img src='https://media.giphy.com/media/3LBOYfQLt6GwZMtjZ3/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
->>>>>>> dffab9301e810d6e0fc1cb2374ba4cf3647ee393
 

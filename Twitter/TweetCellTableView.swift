@@ -17,6 +17,9 @@ class TweetCellTableView: UITableViewCell {
     @IBOutlet weak var retweetButton: UIButton!
     
     var favorited:Bool = false
+    var retweeted:Bool = false
+    var tweetId:Int = -1
+    
     func setFavorite(isFavorited:Bool) {
         favorited = isFavorited
         if favorited {
@@ -26,11 +29,50 @@ class TweetCellTableView: UITableViewCell {
             favButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
         }
     }
+    
     @IBAction func favoriteTweet(_ sender: Any) {
-        
+        if favorited {
+            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetId, success: {
+                self.setFavorite(isFavorited: false)
+            }, failure: { (error) in
+                print("set favorite error")
+            })
+        }
+        else {
+            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {
+                self.setFavorite(isFavorited: true)
+            }, failure: { (error) in
+                print("set favorite error")
+            })
+        }
     }
+    
+    func setRetweet(isRetweeted:Bool) {
+        retweeted = isRetweeted
+        if retweeted {
+            retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControl.State.normal)
+        }
+        else {
+            retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControl.State.normal)
+        }
+    }
+    
+    
     @IBAction func retweet(_ sender: Any) {
-        
+        if retweeted {
+            TwitterAPICaller.client?.unretweetTweet(tweetId: tweetId, success: {
+                self.setRetweet(isRetweeted: false)
+            }, failure: { (error) in
+                print("error unretweeting \(error)")
+            })
+        }
+        else {
+            TwitterAPICaller.client?.retweetTweet(tweetId: tweetId, success: {
+                self.setRetweet(isRetweeted: true)
+            }, failure: { (error) in
+                print("error retweeting \(error)")
+            })
+        }
     }
     
     override func awakeFromNib() {

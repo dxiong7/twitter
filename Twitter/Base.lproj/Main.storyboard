@@ -99,7 +99,7 @@
                                             </constraints>
                                             <state key="normal" image="retweet-icon"/>
                                             <connections>
-                                                <action selector="retweetTweet:" destination="GMj-q2-hDs" eventType="touchUpInside" id="BLr-Jf-9sd"/>
+                                                <action selector="retweet:" destination="GMj-q2-hDs" eventType="touchUpInside" id="rSm-0x-cHO"/>
                                             </connections>
                                         </button>
                                     </subviews>
